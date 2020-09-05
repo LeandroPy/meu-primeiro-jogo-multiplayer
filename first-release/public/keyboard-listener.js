@@ -19,6 +19,7 @@ export default function createKeyboardListener(document) {
         }
     }
 
+
     document.addEventListener('keydown', handleKeydown)
 
     function handleKeydown(event) {
@@ -35,6 +36,6 @@ export default function createKeyboardListener(document) {
 
     return {
         subscribe,
-        registerPlayer
+        registerPlayer,
     }
 }

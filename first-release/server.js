@@ -21,7 +21,6 @@ sockets.on("connection", (socket) => {
     const playerId = socket.id
    
     game.addPlayer({playerId})
-            
     sockets.emit('setup', game.state);
 
     socket.on('disconnect', () => {

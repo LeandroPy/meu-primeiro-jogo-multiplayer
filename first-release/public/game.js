@@ -6,7 +6,7 @@ export default function createGame() {
         screen: {
             width: 10,
             height: 10
-        }
+        },
     }
 
     const observers = [];
@@ -59,6 +59,7 @@ export default function createGame() {
             type: 'remove-player',
             playerId
         })
+        console.log(observers[0]);
     }
 
     function addFruit(command) {
@@ -99,21 +100,29 @@ export default function createGame() {
             ArrowUp(player) {
                 if (player.y - 1 >= 0) {
                     player.y = player.y - 1
+                } else {
+                    player.y = state.screen.height - 1
                 }
             },
             ArrowRight(player) {
                 if (player.x + 1 < state.screen.width) {
                     player.x = player.x + 1
+                } else {
+                    player.x = state.screen.width - state.screen.width
                 }
             },
             ArrowDown(player) {
                 if (player.y + 1 < state.screen.height) {
                     player.y = player.y + 1
+                } else {
+                    player.y = state.screen.height - state.screen.height
                 }
             },
             ArrowLeft(player) {
                 if (player.x - 1 >= 0) {
                     player.x = player.x - 1
+                } else { 
+                    player.x = state.screen.width - 1
                 }
             }
         }

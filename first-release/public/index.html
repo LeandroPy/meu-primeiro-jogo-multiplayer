@@ -34,7 +34,6 @@
 
         socket.on('connect', () => {
             const playerId = socket.id;
-
             const screen = document.getElementById('screen')
             renderScreen(screen, game, requestAnimationFrame, playerId) 
         })
@@ -72,7 +71,6 @@
         })
 
         socket.on('remove-fruit', (command) => {
-            console.log('remove-fruit')
             game.removeFruit(command);
         })
 
